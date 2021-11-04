@@ -1,0 +1,69 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10 mx-auto">
+      <h1>Angular + Firebase</h1>
+
+      <div class="card" *ngIf="!(authService.user | async)">
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input
+                id="email"
+                class="form-control"
+                type="email"
+                [(ngModel)]="email"
+                name="email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">Senha</label>
+              <input
+                id="password"
+                class="form-control"
+                type="password"
+                [(ngModel)]="password"
+                name="password"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="card-footer">
+          <div class="col-md-6">
+            <button
+              class="btn btn-success btn-block"
+              (click)="loginWithEmail()"
+            >
+              Entrar
+            </button>
+          </div>
+          <div class="col-md-6 my-2">
+            <button class="btn btn-info btn-block" (click)="loginWithGoogle()">
+              Entrar com Google
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" *ngIf="authService.authError">
+        <div class="card-body text-danger">
+          {{ authService.authError }}
+        </div>
+      </div>
+
+      <div class="card" *ngIf="authService.user | async">
+        <div class="card-body text-danger">
+          <h2>Logado como</h2>
+          {{ (authService.user | async)?.email }}
+        </div>
+        <div class="card-footer">
+          <div class="col-md-6">
+            <button class="btn btn-danger btn-block" (click)="logout()">
+              Sair
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
