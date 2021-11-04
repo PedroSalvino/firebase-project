@@ -10,6 +10,7 @@ import { AuthService } from './auth.service';
 import { RouterModule } from '@angular/router';
 import { IndexComponent } from './index/index.component';
 import { FirelistComponent } from './firelist/firelist.component';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { FirelistComponent } from './firelist/firelist.component';
       { path: '', component: IndexComponent },
       { path: 'firelist', component: FirelistComponent },
     ]),
+    AngularFireDatabaseModule,
   ],
   declarations: [AppComponent, HelloComponent],
   bootstrap: [AppComponent],
