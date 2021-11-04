@@ -1,0 +1,28 @@
+<h2 class="text-center my-2 text-primary">Lista do Firebase</h2>
+<hr />
+
+<div class="form-group">
+  <label for="item">Item</label>
+  <input class="form-control" name="text" [(ngModel)]="text" />
+
+  <div class="col-md-6 mx-auto my-2">
+    <button class="btn btn-outline-info btn-block">Adicionar</button>
+  </div>
+</div>
+<hr />
+<div class="col-md-10 mx-auto">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td title="Chave: abcdefghijklmnop"></td>
+        <td><button class="btn btn-danger btn-sm">Remover</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
