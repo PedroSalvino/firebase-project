@@ -7,6 +7,9 @@ import { HelloComponent } from './hello.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthService } from './auth.service';
+import { RouterModule } from '@angular/router';
+import { IndexComponent } from './index/index.component';
+import { FirelistComponent } from './firelist/firelist.component';
 
 @NgModule({
   imports: [
@@ -21,6 +24,10 @@ import { AuthService } from './auth.service';
       appId: '1:433475040645:web:01c321c7127b4e91bec0ec',
     }),
     AngularFireAuthModule,
+    RouterModule.forRoot([
+      { path: '', component: IndexComponent },
+      { path: 'firelist', component: FirelistComponent },
+    ]),
   ],
   declarations: [AppComponent, HelloComponent],
   bootstrap: [AppComponent],

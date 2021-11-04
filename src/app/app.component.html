@@ -56,7 +56,18 @@
           <h2>Logado como</h2>
           <strong>{{ (authService.user | async)?.email }}</strong>
         </div>
-        <div class="card-body text-danger"></div>
+        <div class="card-body text-danger">
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-primary btn-block">Início</button>
+            </div>
+            <div class="col">
+              <button class="btn btn-warning btn-block">
+                Lista do Firebase
+              </button>
+            </div>
+          </div>
+        </div>
         <div class="card-footer">
           <div class="col-md-6">
             <button class="btn btn-danger btn-block" (click)="logout()">
