@@ -3,7 +3,7 @@
 
 <div class="form-group">
   <label for="item">Item</label>
-  <input class="form-control" name="text" [(ngModel)]="text" />
+  <input class="form-control" ([ngModel])="(text)" />
 
   <div class="col-md-6 mx-auto my-2">
     <button class="btn btn-outline-info btn-block">Adicionar</button>
@@ -20,7 +20,7 @@
     </thead>
     <tbody>
       <tr>
-        <td title="Chave: abcdefghijklmnop"></td>
+        <td title="Chave: abcdefghijklmnop">Teste ABC</td>
         <td><button class="btn btn-danger btn-sm">Remover</button></td>
       </tr>
     </tbody>
