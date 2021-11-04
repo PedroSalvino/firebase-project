@@ -54,7 +54,7 @@
       <div class="card" *ngIf="authService.user | async">
         <div class="card-header bg-info text-light text-center">
           <h2>Logado como</h2>
-          {{ (authService.user | async)?.email }}
+          <strong>{{ (authService.user | async)?.email }}</strong>
         </div>
         <div class="card-body text-danger"></div>
         <div class="card-footer">
