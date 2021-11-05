@@ -21,13 +21,17 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Item</th>
-        <th></th>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>E-mail</th>
+        <th>Comando</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of list | async">
-        <td [title]="['chave: ' + item.key]">{{ item.text }}</td>
+        <td [title]="['chave: ' + item.key]">{{ item.name }}</td>
+        <td>{{ item.idade }}</td>
+        <td>{{ item.email }}</td>
         <td>
           <button class="btn btn-danger btn-sm" (click)="deleteItem(item.key)">
             Remover

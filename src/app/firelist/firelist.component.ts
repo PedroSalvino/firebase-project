@@ -5,6 +5,7 @@ import {
 } from '@angular/fire/database/database';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-firelist',
@@ -18,7 +19,10 @@ export class FirelistComponent implements OnInit {
   listRef: AngularFireList<any>;
   list: Observable<any[]>;
 
-  constructor(private db: AngularFireDatabase) {
+  constructor(
+    private db: AngularFireDatabase,
+    private authService: AuthService
+  ) {
     this.listRef = db.list('list');
     this.list = this.listRef
       .snapshotChanges()
@@ -35,6 +39,7 @@ export class FirelistComponent implements OnInit {
     this.listRef.push({
       nome: this.nome,
       idade: this.idade,
+      email: this.authService.currentUserEmail,
     });
     this.nome = null;
     this.idade = null;
