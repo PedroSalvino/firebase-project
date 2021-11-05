@@ -34,7 +34,7 @@ export class FirelistComponent implements OnInit {
   addItem() {
     this.listRef.push({
       nome: this.nome,
-      idade: this.idade
+      idade: this.idade,
     });
     this.nome = null;
     this.idade = null;

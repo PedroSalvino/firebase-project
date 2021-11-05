@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
   user: Observable<firebase.User>;
   authError: any;
-
+  currentUserEmail: string;
   constructor(public firebaseAuth: AngularFireAuth) {
     this.user = firebaseAuth.authState;
   }
@@ -19,6 +19,7 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then((value) => {
         console.log('Logado com e-mail e senha');
+        this.currentUserEmail = value.user.email;
       })
       .catch(function (error) {
         console.log(error.message);
@@ -33,6 +34,7 @@ export class AuthService {
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then((value) => {
         console.log('Logado com e-mail e senha');
+        this.currentUserEmail = value.user.email;
       })
       .catch(function (error) {
         console.log(error.message);
@@ -42,5 +44,6 @@ export class AuthService {
 
   logout() {
     this.firebaseAuth.signOut();
+    this.currentUserEmail = null;
   }
 }

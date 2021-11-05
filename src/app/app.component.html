@@ -56,7 +56,7 @@
           <div class="card-header bg-info text-light text-center">
             <h2>Logado como</h2>
 
-            <strong>{{ (authService.user | async)?.email }}</strong>
+            <strong>{{ authService.currentUserEmail }}</strong>
           </div>
           <div class="card-body text-danger">
             <div class="row">
