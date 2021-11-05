@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  AngularFireDatabase,
-  AngularFireList,
-} from '@angular/fire/database/database';
-import { Observable } from 'rxjs';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { AuthService } from '../auth.service';
 
 @Component({

@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import { AuthService } from './auth.service';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AuthService } from './auth.service';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { RouterModule } from '@angular/router';
 import { IndexComponent } from './index/index.component';
 import { FirelistComponent } from './firelist/firelist.component';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 @NgModule({
   imports: [
