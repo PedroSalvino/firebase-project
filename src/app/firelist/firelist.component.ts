@@ -12,7 +12,8 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./firelist.component.css'],
 })
 export class FirelistComponent implements OnInit {
-  text: string;
+  nome: string;
+  idade: number;
 
   listRef: AngularFireList<any>;
   list: Observable<any[]>;
@@ -32,9 +33,11 @@ export class FirelistComponent implements OnInit {
 
   addItem() {
     this.listRef.push({
-      text: this.text,
+      nome: this.nome,
+      idade: this.idade
     });
-    this.text = '';
+    this.nome = null;
+    this.idade = null;
   }
 
   deleteItem(key: string) {
