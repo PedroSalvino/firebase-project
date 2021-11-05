@@ -15,7 +15,7 @@ export class FirelistComponent implements OnInit {
   text: string;
 
   listRef: AngularFireList<any>;
-  list: Observable<any>;
+  list: Observable<any[]>;
 
   constructor(private db: AngularFireDatabase) {
     this.listRef = db.list('list');
