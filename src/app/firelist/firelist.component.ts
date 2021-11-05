@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireList } from '@angular/fire/database/database';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-firelist',
@@ -8,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class FirelistComponent implements OnInit {
   text: string;
 
+  listRef: AngularFireList<any>;
+  list: Observable<any[]>;
+
   constructor() {}
 
   ngOnInit() {}
+
+  addItem(){
+    
+  }
 }
